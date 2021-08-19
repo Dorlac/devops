@@ -1,0 +1,52 @@
+kubectl - the cli to communicate with the API Server 
+kubectl get nodes
+    shows the nodes in the cluster
+kubectl get all
+    retruns all resources
+kubctl create -f {file}
+    creates a deployment
+kubectl expose deployment {deployment} --type=NodePort
+    creates a external service for {deployment}
+kubectl get deployment
+    get all deployments
+kubectl get deployment/{deployment} -o yaml
+    get information on specific deployment
+    Spec section is the most important
+kubectl get service/{service} -o yaml
+    get information on specific service
+    see the spec section
+---
+    multiple files in a single file
+kubectl get pods --show-lables
+    shows labels on all pods
+kubectl label pod/{pod} {key}={new_key} --overwrite
+    relabel a pod
+kubectl label pod/{pod} {key}-
+    remove a label with key {key}
+kubectl get pods --selector {key}={value},{key2}={value2}
+    shows the pods with the label named {key} and with data {value}
+    and the same for {key2} and {value2}
+Selectors
+    =, !=, IN, NOTIN, EXISTS
+kubectl get pods -l '{key} in (a,b)'
+    show pods with {value} within a and b
+    notin not within a and b
+kubectl delete pods -l {key}={value}
+    deletes pod where {key}={value}
+kubectl describe pod/{pod}
+    shows more pod information
+kubectl set image deployment/{deployment}
+    changes the image that the deployment uses
+kubectl create deloyment/{deployment} --record
+    record the rollout history
+kubectl rollout history deployment/{deployment}
+    how rollout history for {deployment}
+kubectl rollout undo deploytment/{deployment} --to-revision
+    rollback to a specific image
+Troubleshooting
+kubectl logs {pod}
+    retruns the logs for a specific pod
+kubectl exec -it {pod} {shell} -c {container}
+    run terminal to interact within the pod
+    -c used if pod has more than one container
+

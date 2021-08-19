@@ -1,0 +1,19 @@
+K8s dashboard
+    a gui for managing k8s cluster
+kubectl create configmap {configmapper} --from-literal={key}={value}
+    pulls value into object from configmap with {key}
+kubectl create secret generic {secret} --from-literal={name}={data}
+    encodes value of {data}
+kubectl get jobs
+    jobs are a controller type with a specific task
+kubectl get cronjob
+    cronjobs is a scheduler for jobs
+kubectl edit cronjob/{cronjob}
+    set suspend status to true to stop
+kubectl get daemonsets
+    daemon sets run a specific pod on each node
+    nodeSelector:
+        {key} : {value}
+    nodes with matching labels will run pod specified by daemon set
+kubectl get statefulset
+    specifies container id's 

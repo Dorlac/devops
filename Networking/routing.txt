@@ -1,0 +1,42 @@
+Routers
+    Filter and forward by IP addresses
+Switches
+    Filter and forward by MAC addresses
+    Uses ethernet information when relying on MAC addresses
+
+Router ports have IP addresses
+    Router care about where the IP packet is supposed to go
+    Use a routing table to send things places
+
+Every router has an upstream router
+Default route sends IP packets to the upstream router
+Routers don't change the IP address
+They change the MAC address of the packet to send it on it's way
+
+Metric indicates the priority on the routing table
+Lower is better
+
+Routers do not care about where a packet came from
+They only care about where the packet is going
+
+packet
+{data}{sequencing number}{source port number}{destination port number}{source IP}{destination IP}
+destination port = {0-1023}
+source port = {1024-65535}
+
+NAT
+    replace {source IP address}{WAN address}
+
+Forwarding ports
+    The point is to allow unsolicited information onto our network
+        (through our router)
+
+{source IP}{router IP}{outside port} | {source IP}{router IP}{inside port}
+
+Port Range Triggering
+    {sent port} | {sent port}{related port}
+
+DMZ (demilitarized zone)
+    Very dangerous, configured on the router
+
+

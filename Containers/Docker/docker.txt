@@ -1,0 +1,121 @@
+Go to docker official installation page to setup docker.
+OR
+Use the Remote - Containers extension
+
+Docker Flow
+docker run
+    turn images into Containers
+docker commit {container-name} {new-image-name}
+    creates a new images with the name {new-image-name} from {container-name}
+Image name stucture
+    registry.example.com:port/organization/image-name:version-tag
+docker tag
+    give images names
+
+Running Things in Docker
+docker run --rm {container} {process}
+    delete after main process finishes
+docker run -ti ubuntu bash -c "sleep 3; echo all done"
+    runs two processes, one after the other
+docker run -d
+    run a detached container
+docker attach {container}
+    enters a detatched container
+ctrl+p ctrl+q
+    detach from a container without killing it
+docker exec -ti {container} {process}
+    run another process in the same container
+
+
+Manage containers
+docker run --name {containers-name} {image} {process}
+    gives the container a name
+docker logs {container-name}
+    outputs docker logs from container
+docker kill {container}
+    makes a container stop
+docker rm {container}
+    deletes a container or stopped container
+docker run --memory maximum-allowed-memory image-name command
+    set maximum ammount of memory allowed
+docker run --cpu-shares
+    relative limits
+docker run --cpu-quota
+    hard limits
+Always name containers and build dependancies into the image before hand
+
+Exposing ports
+private networks
+    group containers together
+exposing a port
+    allow outside access to container
+docker run --rm -ti -p 45678:45678 -p 45679:45679 --name {name} {image} {process}
+    publishes or exposes two ports
+    these are physical posts on the machine hosting them
+docker run -p 45678 -p 45679
+    spcifies only the port whithin the container only
+docker port {container}
+    outputs port mapping
+docker -p 45678/{protocal}
+    specifies which network protocal is being used
+
+Container Networking
+docker network ls 
+    shows available networks
+docker create network {network}
+    creates a new network with name {network}
+docker run --net {network} --name {name} {image} {process}
+    creates a container on the network {network}
+docker network connect {network} {container}
+    conect a container to a network
+
+Images
+docker images
+    lists downloaded images
+Create, Save and Name, Push 
+dockr rmi {image-id}
+    removes image by id
+Image name stucture
+    registry.example.com:port/organization/image-name:version-tag
+
+Volumes
+    persistent Volumes
+    ephemeral Volumes
+Sharing Data with Host
+    docker run -v {path_within_host}:{path_within_container} {image} {process}
+docker run -ti -v /shared-data {image}{process}
+    make Volume
+docker run -ti --volumes-from {container}
+    get volumes from another container
+
+Docker Registries
+docker search {image}
+    search for {image on repository}
+docker pull {image}
+    pull image down from docker hub
+
+Building Docker Images
+Dockerfiles
+    building images with code 
+docker build -t {image} {dockerfile}
+    build an image from this docker file
+The result of each line is passed on to the image
+Caches if lines are unchanged and does not rerun
+Each line creates an image and passes on to the next line 
+
+Building Docker Files
+    # TODO
+
+Under the Hood
+Kernel
+    Respond to messages from the hardware
+    Start and schedule programs
+    Control and organize storage
+    Pass messages between programs
+    Allocats resources, memory, CPU, network, and so on
+Docker is a program that manages the Kernel
+Groups processes together 
+Uses namespaces to contain networks
+Client -> SOCKET <- Server
+Socket over a network or a file
+Nested containers are avalable

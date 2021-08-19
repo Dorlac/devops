@@ -1,0 +1,46 @@
+TCP/IP
+    IP packet on broadcast domain
+    MAC address for an ethernet frame
+    Must have mac address of other computer
+ARP
+    who has {ip-address}
+    sends back ip-address
+    arp -a
+        use to find ARP cache
+            holds MAC mapped to IP's
+Subnet masks
+    if local:
+        ARP
+    else:
+        use default gateway
+/ = whack
+/16 = XXX.XXX.0.0
+Netword ID
+    XXX.XXX.XXX.0
+Host ID
+    XXX.XXX.XXX.{host ID}
+Default gateway: Router
+    network ID ++
+
+Need: Network ID, Subnet mask, and Default gateway
+
+CIDR classless interdomain routing
+Subnet mask
+Network ID
+Upstream router
+
+private IP address
+10.*.*.*
+172.16.*.* - 172.32.*.*
+192.168.*.*
+
+NAT device
+    hides you from the big scary internet
+
+Loopback
+    127.0.0.1 loopback address
+    ::1 for IPv6
+    AIPIPA 169.254.*.*
+        DNS server is down
+
+
