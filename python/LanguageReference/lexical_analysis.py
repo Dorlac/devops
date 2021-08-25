@@ -1,18 +1,17 @@
-# formatting strings with f""
-# replacement field begins and ends with {}
-# expressions are evaluated at runtime
-# adding an equal after the expression will output "expression = value"
-# conversion field: If a conversion is specified, the result of evaluating the expression is converted before formatting.
-# Conversion '!s' calls str() on the result, '!r' calls repr(), and '!a' calls ascii().
-# format specifier: f"result: {value:{width}.{precision}}"  # nested fields
-
-
-""" TOPICS"""
+"""The very basics of python: lexical analysis.
+Topics
+Comments
+Formatting Code
+Linting
+Literals
+ - int
+ - float
+ - str, and f-strings"""
 
 # Comments
-# Readablity is the single most important aspect of a program. If code is confusing, please add comments.
-# Comments begin with "# ". Comments describe some or all of the following code. Use complete sentences.
-# Use a empty comment line to seperate paragraphs.
+# Readablity is the single most important aspect of a program. If code is confusing, please add
+# comments. Comments begin with "# ". Comments describe some or all of the following code. Use
+# complete sentences. Use a empty comment line to seperate paragraphs.
 
 # Formatting
 # Read PEP 8 -- Style Guide for Python Code here: https://www.python.org/dev/peps/pep-0008/
@@ -30,8 +29,9 @@
 #     ],
 
 # Literals
-# Here are some of the built in data types in python: https://docs.python.org/3/library/stdtypes.html
-# For more specialized data types, consult this page: https://docs.python.org/3/library/datatypes.html
+# Built in data types: https://docs.python.org/3/library/stdtypes.html
+# Specialized data types: https://docs.python.org/3/library/datatypes.html
+#
 # int
 # Integers are whole numbers. Note: leading zeros are not allowed for non-zero numbers.
 # For long numbers, use underscores for readability. For example,
@@ -61,6 +61,7 @@
 # message_about_city = "The name of the city is San Antonio."
 # dynamic_message_about_city = f"The name of the city is {city}".
 # \n in a string designates a newline
+# More in depth information on f-strings: https://realpython.com/python-f-strings/
 
 # Docstrings
 # Find information on docstring conventions here: https://www.python.org/dev/peps/pep-0257/

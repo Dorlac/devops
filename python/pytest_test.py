@@ -13,10 +13,10 @@
 # XUnit Style Setup and Teardown
 # allow setup before Modules, Functions,
 # Classes, and Methods
-# 
-# Add fixtures to parameter of tests 
+#
+# Add fixtures to parameter of tests
 # to run before tests. Or use @pytest.mark.usefuxtures()
-# 
+#
 # Test fixture Teardown
 # yield keyword or add finalizer method
 
@@ -51,10 +51,9 @@
 # Write seperate tests for positive and negative cases
 # Be sure to not combine these two tests
 
-
-import pytest
-from pytest import approx
 from unittest.mock import MagicMock
+from pytest import approx
+
 
 # Test fixtures
 # Use fixtures to remove duplication in setup and teardown.
@@ -114,7 +113,7 @@ def test_returnsCorrtectStirng(monkeyppatch):
 
 # Combine similar tests using parametrize decorator
 @pytest.mark.parametrize("list","of","parameters","to","be","tested")
-def test_multiple_senarios_tested()
+def test_multiple_senarios_tested():
     pass
 
 # Look for conftest.py for prewritten fixtures
