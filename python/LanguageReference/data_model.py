@@ -1,5 +1,10 @@
 """Here is some information on the data model of python."""
 
+# The single most helpful built-in function when analyzing the data model
+dir()
+# dir(object) returns a list of objects defined by the __dir__() if it exists otherwize __dict__().
+# __getattribute__ to define attribute access. __getattr__ when atribute is not found.
+
 # Objects are abstractions for all data
 # Obects have three parts, identity, type, and value
 #
@@ -38,6 +43,11 @@
 # links a class or class instance to a function
 # __self__ represents the class/class_instance and __func__ represents the function.
 
+# Iterator Types
+# Iterate over containers with container.__iter__()
+# iterator.__iter__() returns itself.
+# iterator.__next__() returns the next iterator object. Once reaching the end of the list, should return StopIteration over and over.
+
 # Generator functions
 # returns an iterator object using the "yield" key word. Calling __iterator__.__next__() is how to
 # access the next object in the iterable. Anything with a return statement, a StopIteration
@@ -58,6 +68,14 @@
 # Generally, these are factories for class instances. Classes are callable. The arguments of a class
 # are passed to __new__() and then typically __init__. Just like most special methods, __new__ can
 # be overridden.
+# class object is the base for all classes by default.
+#
+# Decorators
+# @decorator_one
+# @decorator_two
+# def func():
+#   pass
+# is the same as decorator_one(decorator_two(func))
 
 # Class instances
 # These instance can be made callable by defining __call__() in their class.
@@ -78,6 +96,12 @@
 
 # Context Managers
 # Context managers define runtime context and are invoked with the "with" statement.
+# Entered before the statement body is entered and exited when the statement body ends.
+# contextmanage.__enter__() returns the object whose value is attached to the id of the "as" clause.
+# contextmanager.__exit__() is comfusing. Look at https://docs.python.org/3/library/stdtypes.html#other-built-in-types
 
 # Coroutines
 # More to come on this in the standard library review.
+
+# Typing is also confusing. If typing might be confused or if the type that a function returns seems helpful,
+# look it up somewhere and add what you find to these notes.
