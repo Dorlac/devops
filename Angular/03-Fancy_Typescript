@@ -1,0 +1,20 @@
+INHERITANCE
+inheritnce uses the extends keyword like java
+access the super class just as super
+
+Getters and Setters
+    get function()
+    set function()
+
+MODULES
+export class name
+then...
+import {class as alias} from './location' \\ alias is optional
+
+ENCAPSULATION
+can mark attibutes as private, public, or protected
+protect means accecable in class or by classes that extend
+
+Index able types, mapping
+let variable_name: { [index: type]: whatever type the value is}
+

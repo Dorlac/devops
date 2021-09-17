@@ -1,0 +1,16 @@
+// Decorators
+@Component()
+
+app.module.ts contains the root and import stuff
+
+Angular Template Syntax
+Interpolation {{}}
+Used to insert class data
+Can also insert methods in there
+
+Property binding []=""
+
+Event binding ()=""
+
+@input
+allows class data to be edited through property binding

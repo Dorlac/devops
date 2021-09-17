@@ -1,0 +1,24 @@
+MODEL
+The model is responsible for containing the domain data
+The model also holds the logic for munipulating this data
+The controller then can interact with the api of the model
+
+CONTROLLER/COMPONENT
+Set up the initial state of the template 
+Contain the logic to present data 
+Contain the logic to update the model based on user interaction
+
+Views/Templates 
+Contains markup and bare minimum logic to present data to the user
+
+Don't try to work with other peoples shity code. Refactor it.
+
+DESIGN PITFALLS
+Logic in the wrong place
+    Putting business logic in templates, rather than in components
+    Putting domain logic in components, rather than in the model
+    Putting data store logic in the client model when using a RESTful service
+Adopting the Data Store Data Format
+    The data store is responsible for modifiying the data for the model.
+Not knowing what you are doing.
+    Go slow and make sure to understand everything before trying to solve the problem.
