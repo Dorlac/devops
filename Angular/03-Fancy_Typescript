@@ -17,4 +17,3 @@ protect means accecable in class or by classes that extend
 
 Index able types, mapping
 let variable_name: { [index: type]: whatever type the value is}
-
