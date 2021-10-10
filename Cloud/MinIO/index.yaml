@@ -1,0 +1,34 @@
+---
+Overview:
+  MinIO tenants can be deployed on private or cloud infrastructure
+  Latest stable version is 4.2.7
+  MinIO Operator installs a CRD for Tenants
+  Kubernetes Plugin is an Aggregate API interfaced with kubectl minio
+
+MinIO Tenant Namespace: MinIO allows one tenant per namespace
+
+Tenant Storage Class: 
+- Summary: 
+    Operator automatically creates a PVC with the default Kubernetes Storage Class.
+    Create a custom Kubernetes Storage Class instead.
+- Storage Class: 
+    # apiVersion: storage.k8s.io/v1
+    # kind: StorageClass
+    # metadata:
+    #   name: direct-csi-min-io
+    # provisioner: kubernetes.io/no-provisioner
+    # volumeBindingMode: WaitForFirstConsumer
+
+Tenant Persistent Volumes:
+  - MinIO recommends using the MinIO DirectCSI Driver to automatically provision Persistent Volumes from locally attached drives.
+  - PVC = volumes + 2
+  - PV > PVC
+  - PV.capacity > PVC.capacity
+
+Tenant Options:
+  - Erasure Coding: 
+      specified in the tenant.yaml file,
+      like a better version of RAID
+  - Bucket Versioning:
+      object's older version are kept in the same bucket.
+  

@@ -45,7 +45,7 @@ docker run --cpu-quota
 Always name containers and build dependancies into the image before hand
 
 Exposing ports
-private networks
+private networks  
     group containers together
 exposing a port
     allow outside access to container

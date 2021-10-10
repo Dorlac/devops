@@ -1,0 +1,84 @@
+# Overview
+---
+CONTROL PLANE:
+  kube-apiserver: Provides the k8s API
+  Scheduler: Schedules pods to run
+  Controller Manager:
+    - Node controller (worker states)
+    - Replication controller (number of pods)
+    - Endpoint controller (joins services and pods)
+    - Service account and token controllers (access management)
+  ectd: key-value store
+
+NODES:
+  kubelet: pod manager
+  kube-proxy: network manager
+  docker daemon (container runtime):
+    pods:
+      containers
+
+THE KUBERNETES API:
+  Summary: 
+    The API can be referenced directly.
+    Official libraries exist to interface with the api through popular programming languages.
+  CLI:
+    - kubectl: a CLI application for interacting with kube-apiserver
+    - kubeconfig: files with server and authentication information to access control plane
+  Versions: Kubernetes supports multiple API versions with different end points.
+  Extension:
+    - Custom Resources:
+        - Definition: Ways to make Kubernetes recognize new resources.
+        - Resource: Endpoint that store API objects of a certain type (like Pods)
+        - Controller: Attaching a controller to a resource allows for a declarative API.
+        - Methods:
+            - Custom resources:
+                CustomResourceDefinition: A custom resource definition uses the same API server
+            - API Aggregation:
+                Create a new API server. The kube-apiserver acts a proxy to the aggregated API.
+
+
+# Objects
+Object Spec and Status:
+  Spec: desired stateIn the .yaml file for the Kubernetes object you want to create, you'll need to set values for the following fields:
+Creating Objects:
+  # kubectl apply -f {object_file} --record
+Required Fields:
+  apiVersion: Which version of the k8s API you're using to create this object
+  kind: What kind of object you want to create
+  metadata: Data that helps uniquely identify the object, including a name string, UID, and optional namespace
+  spec: What state you desire for the object
+Object Management:
+  Imperative Commands: CLI for dev env
+  Imperative Object Configuration: files
+  Declarative Object Configuration: directories
+...
+
+# Workloads
+---
+Resources:
+  Deployment and ReplicaSet: Stateless
+  StatefulSet: Stateful...
+  DaemonSet: node-local facilities
+  Job and CronJob: Tasks not applications
+...
+
+# Services, Load Balancing, and Networking
+---
+
+...
+Pulumi
+Terraform
+Chef
+Puppet
+Kubernetes
+
+Emacs
+AWS Linux, based on REHL 8
+CentOS Stream for personal use.
+# that's a game changer
+
+DynamoDB
+
+Go
+
+DevOps Engineer or Site Reliability Engineer?
